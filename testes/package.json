@@ -1,0 +1,19 @@
+{
+  "name": "testes",
+  "version": "1.0.0",
+  "description": "teste para o curso da seatel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jp-turra/seatel-js.git"
+  },
+  "author": "João Turra ( joaoturra@ufpr.br )",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jp-turra/seatel-js/issues"
+  },
+  "homepage": "https://github.com/jp-turra/seatel-js#readme"
+}
