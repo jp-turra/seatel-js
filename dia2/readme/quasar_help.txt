@@ -1,0 +1,94 @@
+site oficial : https://quasar.dev/
+
+ESTRUTURA DAS PASTAS 
+    .vscode     -   Configurações do VScode Studio para o projeto
+    public      -   Pasta genérica para armazenar imagens e afins
+    src         -   Pasta fonte onde terá a parte principal do código
+        /assest     -   Imagens em svg
+        /boot       -   Arquivos .js que serão executados no ao iniciar o projeto
+            axios.js-   Plugin utilizado para auxiliar nas requisições (HTTP, Rest, etc...)   
+        /components -   Local onde se armazena os componentes Vue.js
+        /css        -   Local onde armazena arquivos de estilo (css)
+        /layout     -   Local onde armazena os arquivos de layout
+        /pages      -   Local onde armazena os arquivos de páginas
+        /router     -   Local onde armazena arquivos de rotas
+            index   -   Arquivo js que seta as configurações das rotas do projeto
+            routes  -   Arquivo js que define as rotas do projeto
+        /store      -   Local onde armazena arquivos do vuex
+            index   -   Arquivo js que seta as configurações do armazenamento do vuex
+            /module-exemple -   Pasta que contem os arquivos de configuração do vuex
+        App.vue     -   Arquivo referencia para o root do projeto
+        index.template.html -   Arquivo root do projeto
+    package.json    -   Arquivo que manipula/registra inforção do projeto e plugins que se utiliza
+    quasar.conf.js  -   Arquivo de configuração do quasar
+
+
+
+VUE.JS ( https://vuejs.org/v2/guide/ )
+    CAMPO 'data'
+    Quando uma instancia do Vue.js, ela adiciona todas as propriedades encontradas no objeto data
+        ao sistema de reatividade do Vue. 
+        Quando os valores de qualquer destas propriedades muda, 
+        a camada visual “reage”, atualizando-se para condizer com os novos valores.
+
+        - 'data binding' = interpola texto com uma variável com a sintaxe Mustache (chaves duplas):
+            <span>Mensagem: {{ msg }}</span>
+        
+        - 'v-bind' = Utilizado para interpolar (criar reatividade entre uma propriedade do elemento HTML e uma propriedade/função)
+            <div v-bind:id="dynamicId"></div> 
+            ou na forma abreviada
+            <button :disabled="isButtonDisabled">Botão</button>
+
+        - 'v-if' = Adiciona uma condicional para um elemento HTML existir
+        <p v-if="seen">Agora você me viu</p>
+
+        - 'v-for' = Adiciona um loop de repetição onde um elemento HTML será reconstruido repetidademente
+        <p v-for="(item, index) in lista" :id="index">Esse é um dos itens {{ item }}</p>
+
+        - 'v-on' =  observa eventos do DOM:
+        <p v-on:click="doSomething"> ... </p>
+        ou na forma abreviada
+        <a @click="doSomething"> ... </a>
+
+
+    CAMPO 'methods'
+        Campo onde serão inserida as funções
+        Exemplo:
+            methods: {
+                getAnswer: function () {
+                if (this.question.indexOf('?') === -1) {
+                    this.answer = 'Perguntas geralmente têm uma interrogação. ;-)'
+                    return
+                }
+                this.answer = 'Pensando...'
+                var vm = this
+                axios.get('https://yesno.wtf/api')
+                    .then(function (response) {
+                    vm.answer = response.data.answer === 'yes' ? 'Sim.' :
+                        response.data.answer === 'no' ? 'Não.' : 'Talvez!'
+                    })
+                    .catch(function (error) {
+                    vm.answer = 'Erro! Não pode executar a API. ' + error
+                    })
+                }
+            }
+
+    CAMPO 'computed' 
+        - Usamos dados computados (computed properties no inglês, traduzidos como “dados” pois, 
+            durante a utilização em templates, 
+            se parecem efetivamente com propriedades definidas em data).
+            A diferença entre methods e computed é que dados computados são cacheados de acordo 
+                com suas dependências reativas.
+        Exemplo:
+            computed: {
+                // uma função "getter" computada (computed getter)
+                reversedMessage: function () {
+                // `this` aponta para a instância Vue da variável `vm`
+                return this.message.split('').reverse().join('')
+                }
+            }
+
+    COMPONENTS ( https://br.vuejs.org/v2/guide/components.html )
+        - Componentes são instâncias reutilizáveis do Vue com um nome. Podemos usar esses componentes     
+            como um elemento personalizado dentro da instância Vue
+        

@@ -1,0 +1,59 @@
+ref => https://blog.betrybe.com/desenvolvimento-web/comandos-e-tags-html/
+
+<html></html>
+- Essa tag está sempre no começo e no fim da página web. Ela limita onde o código começa e termina.
+
+<head></head>
+    - Utilizada para definir o começo e o fim do cabeçalho de um documento html.
+    - <title></title>
+        - Define o título do documento HTML. Esse é o nome que é exibido no topo da janela do navegador quando a página é aberta.
+
+<meta\> - Essa tag traz dados básicos sobre o documento, como autor e data de criação.
+
+<style></style>
+
+    - Essa tag define o estilo de parte ou de todo o conteúdo da página web.
+
+<script></script>
+
+    - Permite a adição de scripts à página web.
+
+<body></body>
+    - Indica para o navegador o corpo do documento HTML, ou seja, a parte principal da página web. 
+    Essa tag é acompanhada de outros elementos, sendo os mais comuns:
+        - bgcolor, que define o conteúdo de fundo na codificação #RGBGBB;
+        - background, que permite utilizar uma imagem;
+        - text, que define a cor do texto principal;
+        - link, que define a cor dos links da página;
+        - vlink, que define a cor de links que já foram visitados pelo usuário;
+        - alink marca a cor de links ativados pelo usuário.
+
+<hn></hn> - Define o nível de formatação de cabeçalho de parte do texto.
+“n” deve ser substituído por um número que vai de 1 a 6 (h1, h2, etc).
+
+<p></p>
+    - Define o começo e o fim de um parágrafo. Pode ser utilizado ao lado de align para indicar o alinhamento do trecho.
+
+<a></a> - Cria um link e atribui elementos a ele, como: - href => vincula a URL do documento a algo; - name => o nome âncora; - target => identifica se o link deve ser aberto na mesma janela, em nova aba ou nova janela; - rel => aponta os tipos de link que avançam; - rev => define os links que podem reverter uma ação; - acesskey => para atribuir uma tecla a um comando; - shape e coords => para uso com formas de objetos; - tabindex => determina a ordem das guias que são exibidas para o usuário; - onclick => define um evento JavaScript para o click no item; - onmouseover => define um evento JavaScript caso o usuário passe com o ponteiro do mouse em cima do item; - onmouseout => define um evento JavaScript caso o ponteiro do mouse saia do item.
+
+<ol></ol>
+    - Cria listas ordenadas. Deve ser acompanhado de start, para indicar o começo da lista e type, para apontar o tipo de caractere que será ordenado.
+
+<ul></ul>
+    - Cria listas não ordenadas. Precisa do type para apontar o tipo de item que fará parte da lista.
+
+    - <li></li>
+        - Define cada item da lista.
+
+<dir></dir>
+    - Lista diretórios em um documento HTML.
+
+<br></br> - Define uma quebra de linha.
+
+<div></div>
+    - Define um bloco inteiro de conteúdo. Muito útil para organizar elementos na página web.
+
+<img></img> - Permite inserir imagens na página web.
+
+<table></table>
+    - Cria tabelas para a exibição de itens.
